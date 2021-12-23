@@ -1,0 +1,31 @@
+@import "var";
+@import "fonts";
+@import "sidebar";
+@import "items";
+
+html {
+    font-size: 10px;
+}
+
+body {
+    background-color: #E5E5E5;
+}
+
+.container {
+    max-width: 144rem;
+    padding: 0 1.5rem;
+    margin: 0 auto;
+    display: flex;
+    padding: 3.2rem;
+}
+
+* {
+    margin: 0;
+}
+
+h3 {
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    color: $gun-powder;
+}

@@ -1,0 +1,22 @@
+<aside class="left-menu">
+    <span class="left-menu__title">Добавление товара</span>
+    <form class="form" method="post" action="index.html" autocomplete="off">
+        <div class="form__item">
+            <label for="name">Наименование товара</label>
+            <input type="text" required id="name" name="item_name" placeholder="Введите наименование товара" class="input">
+        </div>
+        <div class="form__item">
+            <label for="description">Описание товара</label>
+            <textarea id="description" name="item_description" placeholder="Введите описание товара" rows="5" class="input"></textarea>
+        </div>
+        <div class="form__item">
+            <label for="link">Ссылка на изображение товара</label>
+            <input type="text" required id="link" name="item_link" placeholder="Введите ссылку" class="input">
+        </div>
+        <div class="form__item">
+            <label for="price">Цена товара</label>
+            <input type="text" required id="price" name="item_price" placeholder="Введите цену" class="input">
+        </div>
+        <button type="submit">Добавить товар</button>
+    </form>
+</aside>
