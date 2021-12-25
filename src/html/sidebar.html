@@ -1,22 +1,22 @@
 <aside class="left-menu">
     <span class="left-menu__title">Добавление товара</span>
-    <form class="form" method="post" action="index.html" autocomplete="off">
+    <form class="form" name="addItemForm" action="#" autocomplete="off">
         <div class="form__item">
             <label for="name">Наименование товара</label>
-            <input type="text" required id="name" name="item_name" placeholder="Введите наименование товара" class="input">
+            <input type="text" id="name" name="name" placeholder="Введите наименование товара" required class="input">
         </div>
         <div class="form__item">
             <label for="description">Описание товара</label>
-            <textarea id="description" name="item_description" placeholder="Введите описание товара" rows="5" class="input"></textarea>
+            <textarea id="description" name="description" placeholder="Введите описание товара" rows="5" class="input"></textarea>
         </div>
         <div class="form__item">
             <label for="link">Ссылка на изображение товара</label>
-            <input type="text" required id="link" name="item_link" placeholder="Введите ссылку" class="input">
+            <input type="text" id="link" name="link" placeholder="Введите ссылку" required class="input">
         </div>
         <div class="form__item">
             <label for="price">Цена товара</label>
-            <input type="text" required id="price" name="item_price" placeholder="Введите цену" class="input">
+            <input type="text" id="price" name="price" placeholder="Введите цену" required class="input">
         </div>
-        <button type="submit">Добавить товар</button>
+        <button type="submit" class="form__button" disabled>Добавить товар</button>
     </form>
 </aside>

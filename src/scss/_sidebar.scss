@@ -30,15 +30,16 @@
         .input {
             box-shadow: 0 .2rem .5rem rgba(0, 0, 0, 0.1);
             border-radius: .4rem;
-            border: none;
+            border: 0 solid black;
             outline: none;
             font-size: 1.2rem;
             line-height: 1.5rem;
-        }
-
-        input {
             padding: 0 1.6rem;
             height: 3.6rem;
+        }
+
+        .input-error {
+            border: 1px solid red;
         }
 
         textarea {
@@ -64,6 +65,13 @@
         &:disabled {
             color: $dark-gray;
             background: #EEEEEE;
+            cursor: not-allowed;
         }
     }
+
+    .error {
+        color: red;
+        padding-top: .7rem;
+    }
 }
+
