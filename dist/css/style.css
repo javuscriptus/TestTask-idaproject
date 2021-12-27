@@ -1,5 +1,5 @@
 .left-menu {
-  min-width: 33.3rem;
+  flex: 0 0 33.2rem;
 }
 .left-menu__title {
   font-weight: 600;
@@ -33,12 +33,14 @@
   font-size: 1.2rem;
   line-height: 1.5rem;
   padding: 0 1.6rem;
+}
+.form__item .input-text {
   height: 3.6rem;
 }
 .form__item .input-error {
   border: 1px solid red;
 }
-.form__item textarea {
+.form__item .textarea {
   resize: none;
   overflow: auto;
   padding: 1.4rem 1.6rem;
@@ -101,7 +103,7 @@
 }
 .items-item {
   cursor: pointer;
-  flex: 0 0 31.7%;
+  flex: 0 0 31.5%;
   background: #FFFEFB;
   box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.04), 0 0.6rem 1rem rgba(0, 0, 0, 0.02);
   border-radius: 0.4rem;
@@ -153,4 +155,51 @@ h3 {
   font-size: 2rem;
   line-height: 2.5rem;
   color: #49485E;
+}
+
+@media (max-width: 1199px) {
+  .items-item {
+    flex: 0 0 48%;
+  }
+}
+@media (max-width: 991px) {
+  .main {
+    align-items: end;
+    margin-left: 1rem;
+  }
+
+  .items-item {
+    flex: 50%;
+  }
+
+  .sort {
+    margin-top: 0.7rem;
+    margin-bottom: 1rem;
+  }
+
+  .items {
+    justify-content: center;
+  }
+
+  .left-menu {
+    flex: 0 0 50%;
+  }
+}
+@media (max-width: 767px) {
+  .container {
+    display: block;
+  }
+
+  .main {
+    align-items: center;
+  }
+
+  .items-item {
+    flex: 45%;
+  }
+}
+@media (max-width: 575px) {
+  .items-item {
+    flex: 100%;
+  }
 }

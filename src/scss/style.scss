@@ -1,7 +1,7 @@
 @import "var";
 @import "fonts";
 @import "sidebar";
-@import "items";
+@import "main";
 
 html {
     font-size: 10px;
@@ -28,4 +28,53 @@ h3 {
     font-size: 2rem;
     line-height: 2.5rem;
     color: $gun-powder;
+}
+
+
+@media (max-width: 1199px){ 
+    .items-item {
+        flex: 0 0 48%;
+    }
+}
+
+@media (max-width: 991px){ 
+    .main {
+        align-items: end;
+        margin-left: 1rem;
+    }
+
+    .items-item {
+        flex: 50%;
+    }
+
+    .sort {
+        margin-top: 0.7rem;
+        margin-bottom: 1rem;
+    }
+
+    .items {
+        justify-content: center;
+    }
+
+    .left-menu {
+        flex: 0 0 50%;
+    }
+}
+
+@media (max-width: 767px){ 
+    .container {
+        display: block;
+    }
+    .main {
+        align-items: center;
+    }
+    .items-item {
+        flex: 45%;
+    }
+}
+
+@media (max-width: 575px){ 
+    .items-item {
+        flex: 100%;
+    }
 }

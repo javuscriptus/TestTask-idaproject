@@ -1,5 +1,5 @@
 .left-menu {
-    min-width: 33.3rem;
+    flex: 0 0 33.2rem;
 
     &__title {
         font-weight: 600;
@@ -35,6 +35,10 @@
             font-size: 1.2rem;
             line-height: 1.5rem;
             padding: 0 1.6rem;
+
+        }
+
+        .input-text {
             height: 3.6rem;
         }
 
@@ -42,7 +46,7 @@
             border: 1px solid red;
         }
 
-        textarea {
+        .textarea {
             resize: none;
             overflow: auto;
             padding: 1.4rem 1.6rem;
@@ -74,4 +78,3 @@
         padding-top: .7rem;
     }
 }
-

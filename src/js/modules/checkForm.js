@@ -1,39 +1,45 @@
-// // Подразумевается что информация об обязательных полях приходит с сервера
-// const requiredInputNames = ['name', 'link', 'price'];
+const submitButton = document.querySelector('.form__button');
+const mainForm = document.forms.addItemForm;
 
-// const submitButton = document.querySelector('.form__button')
+export const checkForm = () => {
+    const addError = (element, message) => {
+        const errorSpan = document.createElement('span');
+        errorSpan.textContent = message;
+        errorSpan.classList.add('error');
 
-// export const checkForm = (e, form) => {
-//     const targetInput = e.target;
+        if (element.value.trim() === '' && !element.classList.contains('input-error')) {
+            element.classList.add('input-error');
+            element.after(errorSpan);
+            
+        }
+    }
 
-//     const setError = (message) => {
-//         const error = document.createElement('span');
-//         error.innerText = message;
-//         targetInput.after(error);
-//         error.classList.toggle('error');
+    const removeError = (element) => {
+        element.parentElement.removeChild(element.parentNode.lastElementChild);
+        element.classList.remove('input-error');
+    }
 
-//         if (targetInput.value.trim() && targetInput.nextElementSibling?.classList.value === 'error') {
-//             targetInput.parentElement.remove(error)
-//         }
-//     }
+    const enableBtn = () => submitButton.disabled = false;
 
-//     const checkBtn = () => {
-//         const requiredInputs = form.filter(i => i.required)
-//         const b = form.filter(i => i.required && i.value.length)
-//         btn.disabled = requiredInputs.length !== b.length;
-//     }
+    const disableBtn = () => submitButton.disabled = true;
 
-//     requiredInputNames.forEach((i) => {
-//         /*
-//             Проверяем является ли инпут обязательным
-//             Проверяем является ли инпут незаполненным
-//             Проверяем добавлена ли уже ошибка
-//         */
-//         if ((targetInput.name === i && targetInput.value === '') && !targetInput.parentElement.querySelector('span')) {
-//             setError("Поле является обязательным")
-//         } else if (targetInput.value !== '') {
-//             // const error = targetInput.parentElement.querySelector('span')
-//             // targetInput.parentElement.removeChild(error)
-//         }
-//     })
-// }
+    mainForm.addEventListener('focusout', ({
+        target
+    }) => {
+        target.value = target.value.trim();
+        target.required && addError(target, "Поле является обязательным");
+    })
+
+    mainForm.addEventListener('keyup', ({
+        target
+    }) => {
+        if (target.value.trim().length > 0) {
+            target.classList.contains('input-error') && removeError(target);
+            mainForm.checkValidity() ? enableBtn() : disableBtn();
+
+        } else if (target.value.trim().length === 0 && target.required) {
+            addError(target, "Поле является обязательным");
+            disableBtn();
+        }
+    })
+}
