@@ -1,7 +1,6 @@
 const submitButton = document.querySelector('.form__button');
-const mainForm = document.forms.addItemForm;
 
-export const checkForm = () => {
+export const checkForm = (mainForm) => {
     const addError = (element, message) => {
         const errorSpan = document.createElement('span');
         errorSpan.textContent = message;

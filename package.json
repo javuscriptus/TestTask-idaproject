@@ -15,6 +15,7 @@
   "devDependencies": {
     "browser-sync": "latest",
     "del": "latest",
+    "firebase": "^9.6.1",
     "gulp": "latest",
     "gulp-autoprefixer": "latest",
     "gulp-clean-css": "latest",
@@ -37,7 +38,7 @@
     "gulp-webp-html-nosvg": "latest",
     "gulp-webpcss": "latest",
     "sass": "latest",
-    "webp-converter": "latest",
+    "webp-converter": "2.2.3",
     "webpack": "latest",
     "webpack-stream": "latest"
   }

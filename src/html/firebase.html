@@ -1,0 +1,20 @@
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+    import { getDatabase, ref, set, child, update, remove } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js'
+    
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyASNdPobYceEDLl2hsDJYdt-uNNtVi5BhQ",
+        authDomain: "test-task-idaproject.firebaseapp.com",
+        projectId: "test-task-idaproject",
+        storageBucket: "test-task-idaproject.appspot.com",
+        messagingSenderId: "751450663105",
+        appId: "1:751450663105:web:12830a93031cdd5cba8c40"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase();
+
+    console.log(db);
+</script>
