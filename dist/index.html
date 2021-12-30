@@ -26,23 +26,21 @@
         </div>
         <div class="form__item">
             <label for="price">Цена товара</label>
-            <input type="text" id="price" name="price" placeholder="Введите цену" required class="input input-text">
+            <input type="text" id="price" name="price" placeholder="Введите цену" required class="input input-text" maxlength="10">
         </div>
-        <button type="submit" class="form__button" disabled>Добавить товар</button>
+        <button type="submit" name="submit" class="form__button" disabled>Добавить товар</button>
     </form>
 </aside>
             <main class="main">
     <div class="sort">
         <select name="sort" id="sort" class="sort-select">
             <option selected value="По умолчанию">По умолчанию</option>
-            <option value="Чебурашка">Чебурашка</option>
-            <option value="Шапокляк">Шапокляк</option>
-            <option value="Крыса Лариса">Крыса Лариса</option>
+            <option value="Сначала дешевые">Сначала дешевые</option>
+            <option value="Сначала дорогие">Сначала дорогие</option>
+            <option value="По наименованию">По наименованию</option>
         </select>
     </div>
-    <div class="items">
-        <!-- Карточки -->
-    </div>
+    <div class="items"></div>
 </main>
         </div>
         <script src="js/app.min.js"></script>

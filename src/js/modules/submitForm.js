@@ -1,4 +1,6 @@
-import { addsItemsToPage } from './addsItemsToPage.js'
+import {
+    addsItemsToPage
+} from './addsItemsToPage.js'
 import {
     db
 } from './firebase.js'
@@ -9,25 +11,46 @@ import {
 } from 'firebase/firestore'
 
 export const submitForm = (mainForm) => {
-    const serializeForm = (formNode) => {
-        const data = new FormData(formNode)
+    // Получаем данные введенные в форму 
+    const serializeForm = () => {
+        const data = new FormData(mainForm)
         return Object.fromEntries(data)
     }
 
-    const handleFormSubmit = (event) => {
-        // event.preventDefault()
-        const data = serializeForm(mainForm)
-        mainForm.reset();
-        addToFirebase(data)
-        addsItemsToPage()
+    const resetForm = () => {
+        let inputName = mainForm.name;
+        let inputDescription = mainForm.description;
+        let inputLink = mainForm.link;
+        let inputPrice = mainForm.price;
+        let submitBtn = mainForm.submit
+
+        inputName.value = ''
+        inputDescription.value = ''
+        inputLink.value = ''
+        inputPrice.value = ''
+
+        submitBtn.disabled = true;
     }
 
-    const addToFirebase = async (data) => {
-        // Передаем в firebase заполненные поля
+    // Обрабатываем выполнение формы
+    const handleFormSubmit = (event) => {
+        // Убираем стандартное поведение формы
+        event.preventDefault()
+
+        const data = serializeForm()
+        addToFirebase(data)
+        // Добавляем товар на страницу
+        addsItemsToPage(data)
+        // Сбрасываем поля в форме
+        resetForm()
+    }
+
+    // Добавляем данные из формы в firebase
+    const addToFirebase = async (item) => {
         try {
             await addDoc(collection(db, 'items'), {
                 timestamp: serverTimestamp(),
-                item: data,
+                item: item,
             })
         } catch (error) {
             alert(error)

@@ -1,12 +1,12 @@
 .main {
     display: flex;
     flex-direction: column;
-    align-items: end;
-    width: 100%;
 }
 
 .sort {
     margin-bottom: 1.7rem;
+    justify-content: end;
+    display: flex;
 
     &-select {
         font-size: 1.2rem;
@@ -31,7 +31,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 1.6rem;
-    justify-content: end;
+    margin-left: 8rem;
 
     &-item {
         cursor: pointer;
@@ -53,11 +53,28 @@
             height: 19.1rem;
             padding: 1.6rem;
 
+            p,
+            span,
+            h3 {
+                word-wrap: break-word;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            &__title {
+                white-space: nowrap;
+                word-wrap: normal;
+            }
+
             &__description {
+                height: 8rem;
                 margin-top: 2.5rem;
-                margin-bottom: 4rem;
+                margin-bottom: 3.2rem;
                 font-size: 1.6rem;
                 line-height: 2rem;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 4;
             }
 
             &__price {
@@ -66,9 +83,8 @@
                 font-size: 2.4rem;
                 line-height: 3rem;
                 margin-bottom: .8rem;
+                white-space: nowrap;
             }
         }
     }
 }
-
-

@@ -16,6 +16,8 @@
     padding: 2.4rem;
     background-color: $floral-white;
     border-radius: .4rem;
+    position: sticky;
+    top: 2.4rem;
 
     &__item {
         display: flex;
